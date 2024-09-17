@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Student Performance Indicator</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body>
+    <h1>Student Performance Indicator</h1>
+    <form method="POST">
+      <label for="gender">Gender:</label>
+      <select id="gender" name="gender">
+        <option value="female">Female</option>
+        <option value="male">Male</option>
+      </select>
+      <br /><br />
+      <label for="ethnicity">Ethnicity:</label>
+      <select id="ethnicity" name="ethnicity">
+        <option value="group A">Group A</option>
+        <option value="group B">Group B</option>
+        <option value="group C">Group C</option>
+        <option value="group D">Group D</option>
+      </select>
+      <br /><br />
+      <label for="parental_education">Parental Education:</label>
+      <select id="parental_education" name="parental_education">
+        <option value="high school">High School</option>
+        <option value="some college">Some College</option>
+        <option value="associate's degree">Associate's Degree</option>
+        <option value="bachelor's degree">Bachelor's Degree</option>
+        <option value="master's degree">Master's Degree</option>
+      </select>
+      <br /><br />
+      <label for="lunch">Lunch:</label>
+      <select id="lunch" name="lunch">
+        <option value="standard">Standard</option>
+        <option value="free/reduced">Free/Reduced</option>
+      </select>
+      <br /><br />
+      <label for="test_preparation">Test Preparation:</label>
+      <select id="test_preparation" name="test_preparation">
+        <option value="none">None</option>
+        <option value="completed">Completed</option>
+      </select>
+      <br /><br />
+      <input type="submit" value="Predict" />
+    </form>
+
+    {% if result is not none %}
+    <h2>Predicted Average Score: {{ result }}</h2>
+    {% endif %}
+  </body>
+</html>
